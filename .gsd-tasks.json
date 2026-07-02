@@ -1,0 +1,41 @@
+{
+  "project": "Smart Inbox Triage Dashboard",
+  "status": "in_progress",
+  "tasks": [
+    {
+      "id": "1",
+      "phase": "1.1",
+      "name": "Project Scaffolding",
+      "status": "completed",
+      "files_to_create": [
+        "README.md",
+        "docker-compose.yml",
+        ".env.example",
+        "Makefile",
+        "backend/pyproject.toml",
+        "backend/app/main.py",
+        "frontend/package.json"
+      ]
+    },
+    {
+      "id": "2",
+      "phase": "1.2",
+      "name": "Database Models",
+      "status": "completed",
+      "files_to_create": [
+        "backend/app/database.py",
+        "backend/app/models/*.py"
+      ]
+    },
+    {
+      "id": "3",
+      "phase": "1.3",
+      "name": "Configuration & Core",
+      "status": "completed",
+      "files_to_create": [
+        "backend/app/config.py",
+        "backend/app/core/*.py"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: smart-inbox-triage-backend
+Version: 0.1.0
+Summary: FastAPI backend for Smart Inbox Triage Dashboard
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: uvicorn[standard]
+Requires-Dist: sqlalchemy
+Requires-Dist: alembic
+Requires-Dist: pydantic
+Requires-Dist: pydantic-settings
+Requires-Dist: google-auth
+Requires-Dist: google-auth-oauthlib
+Requires-Dist: google-auth-httplib2
+Requires-Dist: google-api-python-client
+Requires-Dist: httpx
+Requires-Dist: aiohttp
+Requires-Dist: apscheduler
+Requires-Dist: structlog
+Requires-Dist: python-json-logger
+Requires-Dist: cryptography
+Requires-Dist: python-dotenv
+Requires-Dist: waitress
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-asyncio; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: httpx; extra == "dev"
