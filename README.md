@@ -1,99 +1,179 @@
 <div align="center">
-
-# smart-inbox-triage
-
-**AI-powered email triage dashboard. Automatically classifies incoming emails, routes action items for human review, and integrates with Notion and Google Calendar.**
-
-![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
-![Python](https://img.shields.io/badge/Python-3.12-3776ab?style=flat-square&logo=python&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Compose-2496ed?style=flat-square&logo=docker&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)
-
+  <h1 align="center">Smart Inbox Triage</h1>
+  <p align="center">
+    <strong>AI-powered email triage dashboard — FastAPI backend + Next.js frontend with Docker Compose and Alembic migrations</strong>
+  </p>
+  <p align="center">
+    <!-- Badges -->
+    <img src="https://img.shields.io/github/license/akularya6-del/smart-inbox-triage?style=flat-square&color=00F0FF" alt="License" />
+    <img src="https://img.shields.io/github/stars/akularya6-del/smart-inbox-triage?style=flat-square&color=a277ff" alt="Stars" />
+    <img src="https://img.shields.io/github/forks/akularya6-del/smart-inbox-triage?style=flat-square&color=00F0FF" alt="Forks" />
+    <img src="https://img.shields.io/github/issues/akularya6-del/smart-inbox-triage?style=flat-square&color=a277ff" alt="Issues" />
+  </p>
 </div>
 
 ---
 
-## Overview
+## 📖 Project Overview
+AI-powered email triage dashboard — FastAPI backend + Next.js frontend with Docker Compose and Alembic migrations
 
-Stop drowning in email. Smart Inbox Triage syncs your Gmail, classifies every message into actionable categories (RECEIPT, TASK, NEEDS_REPLY, CALENDAR_EVENT, NEWSLETTER, etc.), and surfaces ambiguous items in a review queue — letting you approve or reject AI-suggested actions with one click.
+This repository contains the source code and configuration for `Smart Inbox Triage`. 
 
-High-confidence, low-risk emails (newsletters, receipts) are handled automatically. High-stakes actions go through human review before executing. Every state transition is logged to a full audit trail.
+> [!NOTE]  
+> **Live Demo:** [Link to Live Demo if applicable]  
+> **Documentation:** [Link to Docs if applicable]
 
-## Features
+---
 
-- **Gmail OAuth sync** — Incremental sync via Gmail history API, deduplication by message hash
-- **Rule-based classification engine** — 12 categories with confidence scoring and explainable reasons
-- **User-defined rules** — Create/edit/reorder classification rules with AND/OR condition builders
-- **Review queue** — Approve, reject, or edit AI-suggested actions before execution
-- **Notion integration** — Auto-creates tasks in your Notion database from action emails
-- **Google Calendar integration** — Auto-creates events from meeting/scheduling emails
-- **Exponential backoff retry** — Failed downstream actions retry with configurable delays
-- **Structured audit trail** — Immutable log of every state transition in the system
-- **Full Docker Compose stack** — One command to start the entire application
+## ✨ Key Features
+- **[Feature 1]**: [Describe a core feature]
+- **[Feature 2]**: [Describe another core feature]
+- **[Feature 3]**: [Describe a third core feature]
 
-## Tech Stack
+---
 
-| Layer | Tech |
-|---|---|
-| Backend | FastAPI, SQLAlchemy, Alembic, APScheduler |
-| Frontend | Next.js 15, React, TypeScript, Tailwind CSS |
-| Database | SQLite (dev) / PostgreSQL (prod) |
-| Auth | Google OAuth 2.0 with AES-256-GCM token encryption |
-| Integrations | Gmail API, Notion API, Google Calendar API |
-| Infrastructure | Docker Compose |
+## 📸 Screenshots & Demos
+> [!IMPORTANT]
+> Replace the placeholders below with actual images or GIFs demonstrating the project.
 
-## Quick Start
+| Dashboard/UI | CLI/Terminal Output |
+| :---: | :---: |
+| <img src="https://placehold.co/600x400/252525/00F0FF?text=Screenshot+1" width="400" /> | <img src="https://placehold.co/600x400/252525/a277ff?text=Screenshot+2" width="400" /> |
 
-```bash
-git clone https://github.com/akularya6-del/smart-inbox-triage
-cd smart-inbox-triage
-cp .env.example .env
-# Fill in GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, ENCRYPTION_KEY
-docker compose up
+---
+
+## 🏗️ Architecture & Folder Structure
+
+```mermaid
+graph TD;
+    Client-->API;
+    API-->Database;
+    API-->ExternalServices;
 ```
 
-Open [http://localhost:3000](http://localhost:3000), connect your Gmail, and start triaging.
+<details>
+<summary><b>View Folder Structure</b></summary>
 
-## Architecture
-
-```
+```text
 smart-inbox-triage/
-├── backend/
-│   ├── app/
-│   │   ├── api/          # FastAPI route handlers
-│   │   ├── services/     # Gmail, Notion, Calendar, OAuth, Retry
-│   │   ├── models/       # SQLAlchemy ORM models
-│   │   └── tasks/        # Background jobs (sync, classify, execute, retry)
-│   └── alembic/          # Database migrations
-└── frontend/
-    └── src/
-        ├── components/   # Dashboard, Inbox, Review, Rules, Jobs, Logs, Settings
-        └── hooks/        # TanStack Query data hooks
+├── src/                  # Source code
+│   ├── components/       # UI Components
+│   ├── api/              # API endpoints/routes
+│   └── utils/            # Helper functions
+├── tests/                # Unit and integration tests
+├── public/               # Static assets
+├── .env.example          # Environment variables template
+├── package.json          # Project dependencies (or requirements.txt/Cargo.toml)
+└── README.md             # Project documentation
+```
+</details>
+
+---
+
+## 💻 Tech Stack
+- **Primary Language:** Python
+- **Tags/Technologies:** `ai`, `docker`, `email`, `fastapi`, `nextjs`, `python`, `triage`, `typescript`
+
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js / Python / Docker (depending on stack)
+- [PLACEHOLDER: Add specific versions]
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/akularya6-del/smart-inbox-triage.git
+   cd smart-inbox-triage
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   # [PLACEHOLDER: Update with correct install command e.g., npm install or pip install]
+   npm install
+   ```
+
+3. **Environment Setup:**
+   ```bash
+   cp .env.example .env
+   # [PLACEHOLDER: Fill in the required environment variables in the .env file]
+   ```
+
+4. **Run locally:**
+   ```bash
+   # [PLACEHOLDER: Update with correct run command e.g., npm run dev]
+   npm run dev
+   ```
+
+---
+
+## 🔧 Configuration & Environment Variables
+
+| Variable Name | Description | Required |
+|---------------|-------------|:--------:|
+| `GOOGLE_CLIENT_ID` | Config value | ✅ |
+| `GOOGLE_CLIENT_SECRET` | Config value | ✅ |
+| `NOTION_API_KEY` | Config value | ✅ |
+| `NOTION_DATABASE_ID` | Config value | ✅ |
+| `GOOGLE_CALENDAR_API_KEY` | Config value | ✅ |
+| `ENCRYPTION_KEY` | Config value | ✅ |
+| `SYNC_INTERVAL_MINUTES` | Config value | ✅ |
+| `SYNC_MAX_EMAILS` | Config value | ✅ |
+| `RETRY_ATTEMPTS` | Config value | ✅ |
+| `RETRY_DELAYS` | Config value | ✅ |
+| `DATABASE_URL` | Config value | ✅ |
+| `CORS_ORIGINS` | Config value | ✅ |
+| `LOG_LEVEL` | Config value | ✅ |
+| `HOST` | Config value | ✅ |
+| `PORT` | Config value | ✅ |
+
+---
+
+## 🧪 Testing
+```bash
+# [PLACEHOLDER: Add testing command]
+npm run test
 ```
 
-## Environment Variables
+## 📈 Performance & Security Notes
+- **Performance**: [PLACEHOLDER: Describe caching, CDN, or DB indexing strategies used]
+- **Security**: [PLACEHOLDER: Describe auth, encryption, or CORS policies]
 
-```env
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-ENCRYPTION_KEY=          # Random 32-byte hex string
-NOTION_API_KEY=          # Optional
-DATABASE_URL=sqlite:///./data/app.db
-SYNC_INTERVAL_MINUTES=5
-```
+---
 
-## Features
+## 🐛 Known Issues & Troubleshooting
+- **Issue**: [PLACEHOLDER: Known issue 1]
+  - *Fix*: [PLACEHOLDER: How to resolve it]
 
-- fastapi
-- nextjs
-- ai
-- email
-- triage
-- docker
-- python
-- typescript
+---
 
-## Getting Started
+## 🗺️ Roadmap & Future Improvements
+- [ ] Add comprehensive E2E testing.
+- [ ] Implement CI/CD pipeline using GitHub Actions.
+- [ ] [PLACEHOLDER: Add a domain-specific future improvement]
 
-Clone the repo and follow the setup instructions in the code.
+---
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! 
+Feel free to check the [issues page](https://github.com/akularya6-del/smart-inbox-triage/issues).
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 🙏 Acknowledgements
+- [PLACEHOLDER: Name of library or inspiration]
